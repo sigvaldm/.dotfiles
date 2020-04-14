@@ -1,0 +1,53 @@
+# For tmux to use 256 colors (needed by Vim)
+# export TERM=screen-256color
+
+# Disables Ctrl+S for freezing the terminal
+stty -ixon
+
+export SLEPC_DIR=/opt/slepc/linux-c-opt
+export PYTHONPATH=$PYTHONPATH:$HOME/Codes/punc
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/Programming/systools/bin
+# export PATH=$PATH:$HOME/Codes/PPlot
+# export PATH=$PATH:$HOME/Codes/metaplot
+# export PATH=$PATH:/opt/anaconda/bin
+export PATH=$PATH:/home/sigvald/.gem/ruby/2.5.0/bin
+export PATH=$PATH:/home/sigvald/Codes/protemp
+export PATH=$PATH:/home/sigvald/Codes/PIC-scripts/bin
+
+. /opt/anaconda/etc/profile.d/conda.sh
+
+alias vi=vim
+alias go='gio open'
+
+alias fenics='export LD_LIBRARY_PATH=/home/sigvald/.conda/envs/fenics/lib:$LD_LIBRARY_PATH; conda activate fenics'
+alias punc='conda activate punc'
+alias agriNet='conda activate agriNet'
+
+autoload -Uz promptinit
+promptinit
+prompt redhat
+
+# bindkey -v
+
+# bindkey '^P' up-history
+# bindkey '^N' down-history
+# bindkey '^?' backward-delete-char
+# bindkey '^h' backward-delete-char
+# bindkey '^w' backward-kill-word
+# bindkey '^r' history-incremental-search-backward
+
+# function zle-line-init zle-keymap-select {
+#     VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+#     # RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_custom_status) $EPS1"
+#     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#     zle reset-prompt
+# }
+
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+# export KEYTIMEOUT=1
+#
+
+# Necessary for spawning terminal at same pwd
+source /etc/profile.d/vte.sh
